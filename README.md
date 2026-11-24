@@ -18,14 +18,13 @@ here instead; delete it when done. Those repos need a `DOWNLOADS_TOKEN` secret: 
 fine-grained token with Contents read/write on this repo only. See each repo's
 README for details.
 
-To publish by hand (ProofHub Bridge, or any other tool), tag each release
+To publish by hand (any other tool), tag each release
 `<tool-id>-v<version>` and attach the installers:
 
 | Tool | Tool id | Example tag |
 |---|---|---|
 | KongCut | `kongcut` | `kongcut-v1.0.0` |
 | Prepress Check | `prepress-check` | `prepress-check-v1.0.0` |
-| ProofHub Bridge | `proofhub-bridge` | `proofhub-bridge-v1.0.0` |
 
 ```bash
 gh release create prepress-check-v1.0.0 path/to/PrepressCheck-Setup.exe -R mylandurray/downloads --title "Prepress Check 1.0.0" --notes "What changed"
