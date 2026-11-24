@@ -9,7 +9,15 @@ the finished installers are published here as GitHub Releases.
 
 ## Publishing a release
 
-Tag each release `<tool-id>-v<version>` and attach the installer:
+KongCut and Prepress Check publish here by themselves: push a version tag
+(`git tag -a v1.1.0 -m "What changed"` then `git push origin v1.1.0`) in the
+tool's own repo, and its `release.yml` workflow builds the Windows and Mac files
+and creates the release. Those repos need a `DOWNLOADS_TOKEN` secret: a
+fine-grained token with Contents read/write on this repo only. See each repo's
+README for details.
+
+To publish by hand (ProofHub Bridge, or any other tool), tag each release
+`<tool-id>-v<version>` and attach the installers:
 
 | Tool | Tool id | Example tag |
 |---|---|---|
@@ -20,6 +28,9 @@ Tag each release `<tool-id>-v<version>` and attach the installer:
 ```bash
 gh release create prepress-check-v1.0.0 path/to/PrepressCheck-Setup.exe -R mylandurray/downloads --title "Prepress Check 1.0.0" --notes "What changed"
 ```
+
+Name Mac files with `-mac-apple-silicon` or `-mac-intel` so the homepage can
+tell them apart; any `.exe`, `.msi` or `.zip` without "mac" counts as Windows.
 
 The homepage shows the newest release for each tool that isn't a draft or
 pre-release, so publish as a pre-release to test a build without listing it.
