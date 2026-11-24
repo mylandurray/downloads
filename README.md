@@ -12,7 +12,9 @@ the finished installers are published here as GitHub Releases.
 KongCut and Prepress Check publish here by themselves: push a version tag
 (`git tag -a v1.1.0 -m "What changed"` then `git push origin v1.1.0`) in the
 tool's own repo, and its `release.yml` workflow builds the Windows and Mac files
-and creates the release. Those repos need a `DOWNLOADS_TOKEN` secret: a
+and creates the release. A test build (**Run workflow** on the tool repo's
+Actions tab) leaves an unpublished draft `<tool-id>-v<version>-test-<run>`
+here instead; delete it when done. Those repos need a `DOWNLOADS_TOKEN` secret: a
 fine-grained token with Contents read/write on this repo only. See each repo's
 README for details.
 
